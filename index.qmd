@@ -2,567 +2,730 @@
 title: "Formas de tenencia de la tierra y productividad agrícola rural en Ecuador"
 subtitle: "Una aproximación empírica de la eficiencia técnica mediante modelos de frontera estocástica de producción"
 author: "José Vicente Ordóñez Yaguache"
-institute: "Escuela de Doctorado Internacional · Universidade de Santiago de Compostela"
-date: "2026-01-01"
-date-format: "YYYY"
+institute: "Escola de Doutoramento Internacional · Universidade de Santiago de Compostela"
+lang: es
 format:
   revealjs:
+    theme: [default, styles.scss]
+    width: 1280
+    height: 720
+    margin: 0.055
+    slide-number: c
+    controls: true
+    progress: true
+    hash: true
+    navigation-mode: linear
+    transition: fade
+    background-transition: fade
+    center: false
+    chalkboard: false
+    preview-links: auto
     title-slide-attributes:
-      data-background-color: "#ffffff"
+      data-background-color: "#F7F5F0"
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-## Pregunta central
+## La pregunta que guía esta investigación {.opening-slide}
 
-> **¿Cómo se asocia el régimen predominante de tenencia de la tierra con la productividad de las UPA del Ecuador continental?**
-
-La tesis distingue tres dimensiones:
-
-<div class="cards">
-<div class="card">
-<div class="big">Tierra</div>
-<div class="label">Valor bruto estimado por hectárea</div>
+<div class="hero-question">
+¿Cómo se asocia el <strong>régimen predominante de tenencia de la tierra</strong> con la productividad de las UPA del Ecuador continental?
 </div>
-<div class="card">
-<div class="big">Trabajo</div>
-<div class="label">Valor bruto estimado por persona ocupada</div>
+
+<div class="three-pillars">
+<div class="pillar"><span>Tierra</span><small>valor bruto estimado por hectárea</small></div>
+<div class="pillar"><span>Trabajo</span><small>valor bruto estimado por persona ocupada</small></div>
+<div class="pillar"><span>Frontera</span><small>posición relativa frente a una frontera monetaria condicionada</small></div>
 </div>
-<div class="card">
-<div class="big">Frontera</div>
-<div class="label">Posición relativa frente a una frontera monetaria condicionada</div>
+
+<div class="thesis-line">La tesis pregunta por una <strong>asociación</strong>; no identifica el efecto causal de cambiar el régimen de una misma UPA.</div>
+
+::: {.notes}
+**Tiempo objetivo: 0:50.** Abrir con la pregunta, no con el método. Subrayar desde el inicio que el objeto es la relación entre tenencia y productividad. No hablar de “mejor” o “peor” régimen. La tercera dimensión corresponde a la posición relativa frente a una frontera monetaria condicionada.
+:::
+
+## Propiedad, tenencia y seguridad no son equivalentes
+
+<div class="concept-row">
+<div class="concept-card">
+<div class="concept-number">01</div>
+<h3>Propiedad</h3>
+<p>Régimen jurídico de dominio sobre la tierra.</p>
+</div>
+<div class="concept-arrow">→</div>
+<div class="concept-card emphasis">
+<div class="concept-number">02</div>
+<h3>Tenencia</h3>
+<p>Condiciones de acceso, uso, control y transferencia.</p>
+</div>
+<div class="concept-arrow">→</div>
+<div class="concept-card">
+<div class="concept-number">03</div>
+<h3>Seguridad</h3>
+<p>Estabilidad y protección efectiva de los derechos.</p>
+</div>
+</div>
+
+<div class="author-strip"><strong>Bruce (2000)</strong> · <strong>FIDA (2016)</strong> · <strong>Simbizi et al. (2014)</strong> · <strong>Cotula (2022)</strong></div>
+
+<div class="key-message">La ESPAC permite observar <strong>formas de tenencia</strong>; no mide directamente toda la seguridad jurídica ni la calidad contractual.</div>
+
+::: {.notes}
+**Tiempo objetivo: 0:55.** Esta precisión conceptual protege toda la interpretación posterior. Bruce y FIDA ayudan a entender la tenencia como un conjunto de derechos; Simbizi y Cotula amplían la discusión hacia seguridad legal, consuetudinaria y percibida. No equiparar “tenencia directa” con “seguridad jurídica plena”.
+:::
+
+## ¿Por qué la tenencia podría relacionarse con la productividad?
+
+<div class="mechanism-flow">
+<div class="flow-box strong">Régimen de tenencia</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-grid">
+<div class="flow-box">Horizonte de decisión</div>
+<div class="flow-box">Protección de inversiones</div>
+<div class="flow-box">Capacidad de transferencia</div>
+<div class="flow-box">Acceso temporal a tierra</div>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-grid three">
+<div class="flow-box">Inversión</div>
+<div class="flow-box">Tecnología e intensidad</div>
+<div class="flow-box">Organización productiva</div>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="flow-box strong">Productividad</div>
+</div>
+
+<div class="author-strip"><strong>Besley</strong> · <strong>Deininger</strong> · <strong>Feder</strong> · <strong>Fenske</strong> · <strong>Otsuka</strong></div>
+
+<div class="context-band">El mecanismo puede estar condicionado por <strong>escala · capital humano · crédito · tecnología · mercados · territorio</strong>.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:05.** Explicar que la tenencia no actúa mecánicamente. Puede modificar incentivos y posibilidades de acceso, pero esos canales operan dentro de un contexto productivo e institucional. Esta diapositiva justifica luego las covariables y la dimensión territorial.
+:::
+
+## Ecuador llega a 2022 con una trayectoria agraria particular {.optional-30}
+
+<div class="timeline timeline-centered">
+<div class="time-node"><strong>Formas comunitarias</strong><small>derechos colectivos y uso comunal</small></div>
+<div class="time-line"></div>
+<div class="time-node"><strong>Colonia y República</strong><small>concentración y persistencia del latifundio</small></div>
+<div class="time-line"></div>
+<div class="time-node"><strong>1964–1973</strong><small>reformas agrarias</small></div>
+<div class="time-line"></div>
+<div class="time-node"><strong>Etapa contemporánea</strong><small>regularización, catastro y mercados de tierras</small></div>
+</div>
+
+<div class="key-message">La estructura contemporánea de la tenencia no surge en 2022: es el resultado de una <strong>trayectoria histórica e institucional</strong>.</div>
+
+<div class="source-note">Referencias de la tesis: Francescutti; Brassel et al.; MAGAP; Carrión.</div>
+
+::: {.notes}
+**Tiempo objetivo: 0:55. Versión 30 min: omitir.** La concentración es contexto complementario, no protagonista. Esta diapositiva solo ubica la pregunta empírica dentro de una trayectoria histórica. Evitar convertir la defensa en una cronología extensa.
+:::
+
+## Una parte de la evidencia respalda el mecanismo de seguridad e inversión {.optional-30}
+
+<table class="evidence-table">
+<thead><tr><th>Estudio</th><th>Contexto</th><th>Resultado relevante</th></tr></thead>
+<tbody>
+<tr><td><strong>Feder et al. (1987)</strong></td><td>Tailandia</td><td>Seguridad de derechos, inversión y crédito.</td></tr>
+<tr><td><strong>Besley (1995)</strong></td><td>Ghana</td><td>Determinados derechos se asocian con inversión.</td></tr>
+<tr><td><strong>Ho (2021)</strong></td><td>Vietnam</td><td>Relación positiva con productividad, de magnitud moderada.</td></tr>
+<tr><td><strong>Lawry et al. (2017)</strong></td><td>Revisión sistemática</td><td>Ganancias promedio en productividad e ingresos, con heterogeneidad.</td></tr>
+</tbody>
+</table>
+
+<div class="key-message">La literatura ofrece evidencia compatible con <strong>derechos más seguros → mayores incentivos productivos</strong>.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:00. Versión 30 min: fusionar con la siguiente.** No decir que la literatura “demuestra” una relación universal. El punto es establecer una línea de evidencia favorable antes de mostrar sus límites.
+:::
+
+## Pero los resultados no son universales
+
+<table class="evidence-table tension">
+<thead><tr><th>Estudio</th><th>Qué introduce en el debate</th></tr></thead>
+<tbody>
+<tr><td><strong>Place et al. (1993)</strong></td><td>No encuentra una relación general entre derechos, insumos y rendimientos.</td></tr>
+<tr><td><strong>Dickerman et al.</strong></td><td>Los efectos favorables aparecen solo en determinados contextos.</td></tr>
+<tr><td><strong>Abdulai et al.</strong></td><td>Derechos consuetudinarios pueden sostener incentivos de inversión.</td></tr>
+<tr class="contrast-row"><td><strong>Koirala et al. (2017)</strong></td><td>Arrendatarios presentan menor productividad/eficiencia en arroz filipino.</td></tr>
+<tr><td><strong>Lawry et al. (2017)</strong></td><td>La heterogeneidad regional forma parte del resultado.</td></tr>
+</tbody>
+</table>
+
+<div class="key-message">El signo y la magnitud dependen del <strong>contexto, el tipo de derecho y las restricciones productivas</strong>.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:05.** Esta diapositiva es esencial para la honestidad de la defensa. Koirala muestra una dirección distinta a la observada posteriormente en Ecuador. La heterogeneidad no es un problema que debamos ocultar: es parte del debate científico.
+:::
+
+## En Ecuador queda una pregunta específica abierta
+
+<div class="split-screen">
+<div class="split-panel muted">
+<h3>Conocemos bastante sobre…</h3>
+<ul>
+<li>estructura agraria y fragmentación;</li>
+<li>reformas y regularización;</li>
+<li>catastro y seguridad jurídica;</li>
+<li>restricciones institucionales.</li>
+</ul>
+<div class="author-strip left">Carrión · MAGAP · Corral et al.</div>
+</div>
+<div class="split-panel accent">
+<h3>Conocemos menos sobre…</h3>
+<p class="big-statement">las diferencias de productividad entre <strong>regímenes efectivos de tenencia</strong> con microdatos recientes y cobertura nacional.</p>
+<p>Y menos aún cuando se consideran conjuntamente tierra, trabajo, territorio y una frontera condicionada.</p>
 </div>
 </div>
 
 ::: {.notes}
-La pregunta no es qué régimen es “mejor” en términos absolutos. La pregunta es si existen diferencias sistemáticas después de considerar escala, capacidades observadas, tecnología y territorio.
+**Tiempo objetivo: 1:00.** No afirmar ausencia absoluta de estudios. El vacío es específico: comparación productiva entre regímenes, con microdatos recientes de cobertura nacional y una estrategia que articula varias dimensiones del desempeño.
 :::
 
-## El punto de partida: una estructura agraria desigual
+## Pregunta, objetivo y alcance
 
-<div class="cards">
-<div class="card">
-<div class="big">86,5 %</div>
-<div class="label">de las UPA muestrales tiene menos de 10 ha</div>
+<div class="question-objective">
+<div class="qo-block">
+<span class="qo-label">Pregunta</span>
+<p>¿Cómo se asocia el régimen predominante de tenencia con la productividad monetaria de la tierra y del trabajo y con la posición relativa frente a fronteras condicionadas?</p>
 </div>
-<div class="card">
-<div class="big">8,4 %</div>
-<div class="label">de la superficie muestral está en esas UPA menores de 10 ha</div>
-</div>
-<div class="card">
-<div class="big">66,9 %</div>
-<div class="label">de la superficie muestral se concentra en el 2,0 % de UPA de 200 ha o más</div>
+<div class="qo-block">
+<span class="qo-label">Objetivo</span>
+<p>Analizar esa asociación considerando escala, características de la persona productora, conectividad, prácticas tecnológicas y provincia.</p>
 </div>
 </div>
 
-<div class="key-message">
-La comparación de productividad exige considerar simultáneamente <strong>tenencia y escala</strong>.
+<div class="boundary-box"><strong>Alcance:</strong> diseño cuantitativo, transversal y no experimental. Los resultados se interpretan como <strong>asociaciones condicionadas</strong>.</div>
+
+::: {.notes}
+**Tiempo objetivo: 0:50.** Esta es la formulación formal después del recorrido teórico. Reforzar que la tesis no evalúa qué ocurriría si una misma UPA cambiara de régimen.
+:::
+
+## ESPAC 2022: la base empírica
+
+<div class="data-hero">
+<div class="data-number">42.444</div>
+<div class="data-label">UPA en la base consolidada</div>
+</div>
+
+<div class="module-grid">
+<div>Tenencia</div><div>Superficie</div><div>Cultivos</div><div>Pecuaria</div>
+<div>Trabajo</div><div>Tecnología</div><div>Productor</div><div>Provincia</div>
+</div>
+
+<div class="key-message">Unidad de análisis: <strong>UPA del Ecuador continental</strong>.</div>
+<div class="source-note">Fuente principal: Encuesta de Superficie y Producción Agropecuaria Continua (ESPAC) 2022, INEC.</div>
+
+::: {.notes}
+**Tiempo objetivo: 0:55.** Mostrar la ventaja de integrar módulos dentro de la misma UPA. No dedicar tiempo a detalles administrativos de la encuesta. La cobertura nacional permite formular la comparación a escala del Ecuador continental.
+:::
+
+## El problema que los datos no resolvían por sí solos {.optional-30}
+
+<div class="hetero-products">
+<div class="product">Cacao<small>kg</small></div>
+<div class="not-equal">≠</div>
+<div class="product">Leche<small>litros</small></div>
+<div class="not-equal">≠</div>
+<div class="product">Banano<small>cajas / kg</small></div>
+<div class="not-equal">≠</div>
+<div class="product">Ganado<small>cabezas / peso</small></div>
+<div class="not-equal">≠</div>
+<div class="product">Flores<small>tallos / unidades</small></div>
+</div>
+
+<div class="hero-question small">¿Cómo comparar económicamente UPA que producen bienes físicamente diferentes?</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:00. Versión 30 min: fusionar con la siguiente.** Este es el conflicto metodológico que justifica la base de precios. La productividad requiere un numerador comparable antes de dividir por hectáreas o personas ocupadas.
+:::
+
+## Construimos la pieza que faltaba: una base de precios agropecuarios
+
+<div class="price-pipeline">
+<div class="pipeline-stage source"><strong>SIPA / MAG</strong><small>productor · agroindustria · pecuario · mayoristas · bodegas · referencias internacionales</small></div>
+<div class="pipeline-arrow">→</div>
+<div class="pipeline-stage big"><strong>&gt; 25 bases</strong><small>formatos y unidades heterogéneos</small></div>
+<div class="pipeline-arrow">→</div>
+<div class="pipeline-stage"><strong>Depuración</strong><small>nombres · formatos · faltantes</small></div>
+<div class="pipeline-arrow">→</div>
+<div class="pipeline-stage"><strong>Homologación</strong><small>productos · presentaciones · conversiones</small></div>
+<div class="pipeline-arrow">→</div>
+<div class="pipeline-stage finish"><strong>Precio 2022 comparable</strong><small>trazable por producto y fuente</small></div>
+</div>
+
+<div class="mini-table-wrap">
+<div class="mini-table-title">Trazabilidad real documentada en el Anexo A</div>
+<table class="mini-evidence trace-table">
+<thead><tr><th>Elemento</th><th>Registro documentado</th></tr></thead>
+<tbody>
+<tr><td>Fuente institucional</td><td><strong>SIPA</strong></td></tr>
+<tr><td>Entidad responsable</td><td>Ministerio de Agricultura y Ganadería del Ecuador</td></tr>
+<tr><td>Formato original</td><td>Archivos Excel</td></tr>
+<tr><td>Carpeta reproducible</td><td><code>data/external/sipa/archivos_excel/</code></td></tr>
+<tr><td>Script de descarga</td><td><code>R/03-descargar-precios-sipa.R</code></td></tr>
+</tbody>
+</table>
+<div class="source-note">Fuente: Anexo A de la tesis doctoral (trazabilidad de los archivos de precios agropecuarios).</div>
+</div>
+
+<div class="key-message">La productividad monetaria exigió construir primero una <strong>infraestructura de medición reproducible</strong>.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:30.** Este es uno de los aportes metodológicos que debe recibir mayor énfasis. Explicar que se procesaron más de 25 bases; se homologaron productos y presentaciones y se documentó la fuente utilizada. La tabla inferior muestra elementos reales de trazabilidad del Anexo A. Cuando faltó una referencia oficial se recurrió a fuentes secundarias especializadas con criterios explícitos.
+:::
+
+## De producción física a producción económica comparable
+
+<div class="valuation-equation">
+<div class="eq-piece">Cantidad física</div><div class="eq-op">×</div><div class="eq-piece">Precio de referencia 2022</div><div class="eq-op">=</div><div class="eq-piece strong">Valor bruto estimado</div>
+</div>
+
+<div class="flow-arrow large">↓ agregación por UPA</div>
+
+<div class="two-metrics">
+<div class="metric-card">
+<span class="metric-symbol">PT</span>
+<div class="metric-formula">Valor bruto estimado / hectáreas</div>
+<div class="metric-unit">USD/ha</div>
+</div>
+<div class="metric-card">
+<span class="metric-symbol">PL</span>
+<div class="metric-formula">Valor bruto estimado / personas ocupadas</div>
+<div class="metric-unit">USD/persona</div>
+</div>
+</div>
+
+<div class="boundary-box"><strong>Valor bruto estimado ≠ ingreso neto ≠ beneficio.</strong> No se descuentan costos de producción, transporte o comercialización.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:10.** Explicar la transformación fundamental: convertir productos heterogéneos a una unidad monetaria común. Subrayar que son indicadores parciales de productividad y no PTF. La precisión sobre valor bruto evita interpretaciones financieras indebidas.
+:::
+
+## ¿Cómo representamos la tenencia de una UPA? {.optional-30}
+
+<div class="upa-tenure">
+<div class="upa-box">
+<h3>Una UPA puede combinar terrenos</h3>
+<div class="land-pieces"><span>Directa</span><span>Arrendada</span><span>Posesión / otras</span></div>
+</div>
+<div class="flow-arrow">↓</div>
+<div class="tenure-rule">Sumar superficie por modalidad → calcular participación → asignar la categoría de mayor superficie</div>
+</div>
+
+<div class="three-pillars compact">
+<div class="pillar"><span>Tenencia directa</span></div>
+<div class="pillar reference"><span>Arrendamiento y aparcería</span><small>categoría de referencia</small></div>
+<div class="pillar"><span>Otros regímenes</span></div>
+</div>
+
+<div class="key-message">“Régimen predominante” resume la UPA; no describe exhaustivamente todos sus derechos ni contratos.</div>
+
+::: {.notes}
+**Tiempo objetivo: 0:55. Versión 30 min: omitir y explicarlo oralmente en resultados.** La categoría se define por la mayor proporción de superficie dentro de la UPA. Recordar que esta operacionalización no mide calidad contractual ni seguridad jurídica.
+:::
+
+## De 42.444 UPA a muestras comparables
+
+<div class="funnel">
+<div class="funnel-stage f1"><strong>42.444</strong><small>productividad de la tierra disponible</small></div>
+<div class="funnel-stage f2"><strong>30.502</strong><small>tierra + trabajo</small></div>
+<div class="funnel-stage f3"><strong>26.392</strong><small>educación válida + covariables básicas</small></div>
+<div class="funnel-stage f4"><strong>22.075</strong><small>muestra común OLS + multinivel</small></div>
+<div class="funnel-stage f5"><strong>21.430</strong><small>ambas productividades &gt; 0 · SFA</small></div>
+</div>
+
+<div class="key-message">Cada reducción responde a un <strong>criterio explícito de comparabilidad</strong>, no a una depuración discrecional.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:00.** Explicar con claridad por qué SFA usa una muestra ligeramente menor. El objetivo es anticipar la pregunta del tribunal sobre pérdida de observaciones. La secuencia está documentada en el capítulo VII.
+:::
+
+## Una pregunta, tres lentes complementarias
+
+<div class="lens-grid">
+<div class="lens-card">
+<span class="lens-name">OLS + HC1</span>
+<h3>¿Persiste la asociación en la media?</h3>
+<p>Asociaciones promedio condicionadas.</p>
+</div>
+<div class="lens-card">
+<span class="lens-name">Multinivel</span>
+<h3>¿Cuánto importa compartir territorio?</h3>
+<p>Variación entre UPA y provincias.</p>
+</div>
+<div class="lens-card">
+<span class="lens-name">SFA</span>
+<h3>¿Dónde se ubican las UPA frente a una frontera?</h3>
+<p>Posición relativa condicionada.</p>
+</div>
+</div>
+
+<div class="key-message">La <strong>tenencia</strong> es el hilo común. Los tres métodos responden preguntas distintas; sus parámetros no son equivalentes.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:05.** Presentar los modelos por la pregunta que resuelven, no por su técnica. Esta es la transición desde la construcción de datos hacia la estrategia de contraste.
+:::
+
+## La prueba se construye progresivamente {.optional-30}
+
+<div class="progressive-models">
+<div class="model-step"><strong>M1</strong><span>Tenencia</span></div>
+<div class="model-plus">+</div>
+<div class="model-step"><strong>M2</strong><span>Escala</span></div>
+<div class="model-plus">+</div>
+<div class="model-step"><strong>M3</strong><span>Edad · educación · sexo · internet</span></div>
+<div class="model-plus">+</div>
+<div class="model-step"><strong>M4</strong><span>Riego · fertilizantes · plaguicidas</span></div>
+</div>
+
+<div class="data-lock"><strong>N = 22.075 en todas las etapas.</strong> Cambia la especificación, no la muestra.</div>
+
+<div class="key-message">La evolución del coeficiente describe una <strong>asociación condicionada</strong>; no es una descomposición causal.</div>
+
+::: {.notes}
+**Tiempo objetivo: 0:50. Versión 30 min: fusionar con la diapositiva del coeficiente progresivo.** La ventaja metodológica es mantener la misma muestra. Esto permite observar si la asociación se atenúa o permanece al añadir información.
+:::
+
+## La tenencia directa domina, pero la escala también difiere entre regímenes {.optional-30}
+
+<table class="evidence-table numeric">
+<thead><tr><th>Régimen predominante</th><th>UPA (%)</th><th>Mediana (ha)</th><th>Media (ha)</th><th>P90 (ha)</th></tr></thead>
+<tbody>
+<tr><td><strong>Tenencia directa</strong></td><td>93,0</td><td>0,89</td><td>4,69</td><td>9,00</td></tr>
+<tr><td><strong>Arrendamiento y aparcería</strong></td><td>4,9</td><td>1,09</td><td>3,54</td><td>7,95</td></tr>
+<tr><td><strong>Otros regímenes</strong></td><td>2,1</td><td>1,14</td><td>15,49</td><td>34,61</td></tr>
+</tbody>
+</table>
+
+<div class="key-message">Régimen y escala están relacionados: comparar productividades sin considerar superficie sería insuficiente.</div>
+<div class="source-note">Estimaciones expandidas de la caracterización estructural, ESPAC 2022.</div>
+
+::: {.notes}
+**Tiempo objetivo: 0:55. Versión 30 min: omitir.** No decir “93 % propietarios”; decir “93 % de UPA bajo tenencia directa” según esta operacionalización. La concentración general de tierra puede mencionarse oralmente como contexto, no como eje de la defensa.
+:::
+
+## Tierra y trabajo no cuentan exactamente la misma historia {.relationship-slide}
+
+<div class="relationship-image-wrap">
+![](assets/figuras/relacion_productividades.png){.relationship-figure fig-align="center"}
+</div>
+
+<div class="key-message compact">La asociación es positiva, pero la dispersión es amplia: dos UPA con productividad por hectárea similar pueden presentar resultados muy diferentes por trabajador.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:00.** Esta es la figura original de la tesis, con ambos ejes en escala logarítmica y ajuste LOESS. El objetivo no es leer valores puntuales, sino justificar por qué tierra y trabajo se analizan como dimensiones relacionadas pero no equivalentes.
+:::
+
+## Antes de modelar aparece una primera diferencia
+
+<div class="comparison-matrix">
+<div class="matrix-head"></div><div class="matrix-head">USD/ha</div><div class="matrix-head">USD/persona</div>
+<div class="matrix-label reference">Arrendamiento y aparcería</div><div class="matrix-value reference">2.486</div><div class="matrix-value reference">4.075</div>
+<div class="matrix-label">Tenencia directa</div><div class="matrix-value">1.790</div><div class="matrix-value">3.275</div>
+<div class="matrix-label">Otros regímenes</div><div class="matrix-value">1.503</div><div class="matrix-value">2.140</div>
+</div>
+
+<div class="key-message">En la comparación descriptiva, arrendamiento y aparcería presentan las <strong>mayores medianas</strong> en ambas dimensiones.</div>
+<div class="boundary-box"><strong>Todavía no es una respuesta causal:</strong> pueden intervenir escala, selección, tecnología, composición productiva y territorio.</div>
+<div class="source-note">Medianas sobre 28.580 UPA con ambas productividades positivas y factor de expansión válido.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:10.** Este es el primer giro empírico de la historia. Presentarlo como “primera señal”, no como conclusión. Evitar decir “el arrendamiento es más productivo”.
+:::
+
+## Las medianas difieren, pero las distribuciones se superponen {.figure-focus}
+
+<div class="distribution-row">
+<div class="distribution-crop">
+![](assets/figuras/prod_tierra.png){fig-align="center"}
+</div>
+<div class="distribution-crop">
+![](assets/figuras/prod_trabajo.png){fig-align="center"}
+</div>
+</div>
+
+<div class="key-message compact">Existe una fuerte <strong>heterogeneidad dentro de cada régimen</strong>; la tenencia no determina por sí sola el desempeño de una UPA.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:00.** Esta diapositiva es central para la honestidad del análisis. Las distribuciones se solapan ampliamente. Hay UPA de cada régimen a lo largo de gran parte de la distribución. La mediana resume una tendencia central, no define grupos homogéneos.
+:::
+
+## La productividad también tiene geografía {.optional-30}
+
+<div class="descriptive-map-row">
+<div class="descriptive-map-panel">
+<div class="map-title">Productividad típica de la tierra</div>
+![](assets/figuras/mapa_prod_tierra_descriptivo.png){.descriptive-map fig-align="center"}
+</div>
+<div class="descriptive-map-panel">
+<div class="map-title">Productividad típica del trabajo</div>
+![](assets/figuras/mapa_prod_trabajo_descriptivo.png){.descriptive-map fig-align="center"}
+</div>
+</div>
+
+<div class="key-message compact">No existe una única geografía productiva: los patrones provinciales cambian según se observe tierra o trabajo.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:00. Versión 30 min: fusionar con ICC.** Estos son mapas descriptivos del Capítulo VI. No leer rankings provinciales; la función es mostrar que la dimensión territorial aparece antes de modelar y justifica después la estructura multinivel.
+:::
+
+## OLS + HC1: la asociación persiste al condicionar
+
+<div class="ols-grid">
+<div class="ols-side">
+<h3>Productividad de la tierra</h3>
+<div class="coef-row"><span>Tenencia directa</span><strong>−0,256</strong></div>
+<div class="coef-row"><span>Otros regímenes</span><strong>−0,446</strong></div>
+</div>
+<div class="ols-side">
+<h3>Productividad del trabajo</h3>
+<div class="coef-row"><span>Tenencia directa</span><strong>−0,256</strong></div>
+<div class="coef-row"><span>Otros regímenes</span><strong>−0,415</strong></div>
+</div>
+</div>
+
+<div class="reference-band">Referencia: <strong>arrendamiento y aparcería</strong> · N = 22.075 · errores estándar HC1</div>
+
+<div class="key-message">Los contrastes frente a arrendamiento y aparcería permanecen <strong>negativos</strong> tras incorporar las covariables observadas.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:25.** OLS con controles no empareja UPA ni garantiza comparabilidad causal. Estos coeficientes están en la escala transformada de la variable dependiente y no deben convertirse automáticamente en porcentajes exactos. La formulación correcta es que, condicionando por las covariables observadas, los contrastes frente a arrendamiento y aparcería son negativos para ambas productividades.
+:::
+
+## La asociación persiste al incorporar información paso a paso {.figure-focus}
+
+<div class="full-plot-wrap progressive-wrap">
+<img src="assets/figuras/coef_progresivos.png" alt="Evolución de los coeficientes de tenencia entre especificaciones M1 a M4" class="full-plot-img progressive-full">
+</div>
+
+<div class="key-message compact">Los coeficientes cambian de magnitud al incorporar controles, pero la <strong>dirección del contraste permanece</strong>.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:15.** Recordar que M1–M4 utilizan las mismas 22.075 UPA. Si el coeficiente cambia, eso muestra cuánto coincide con el bloque añadido; no identifica qué variable causa la diferencia.
+:::
+
+## La escala importa, pero de manera distinta para tierra y trabajo {.figure-focus}
+
+<div class="full-plot-wrap prediction-wrap">
+<img src="assets/figuras/predicciones.png" alt="Predicciones ajustadas de productividad según superficie para tierra y trabajo" class="full-plot-img prediction-full">
+</div>
+
+<div class="two-insights">
+<div><strong>Tierra</strong><span>asociación negativa con superficie</span></div>
+<div><strong>Trabajo</strong><span>relación positiva, pero cóncava</span></div>
+</div>
+
+<div class="key-message compact">La escala modifica el desempeño, pero <strong>no elimina la asociación con tenencia</strong> y no opera igual en ambos indicadores.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:10.** Conectar con la discusión sobre relación inversa tamaño-productividad. La superficie es muy asimétrica; en trabajo se usa ln(1+superficie) y un término cuadrático. No confundir el resultado de tierra con el de trabajo.
+:::
+
+## Parte de la heterogeneidad está estructurada territorialmente
+
+<div class="icc-grid">
+<div class="icc-panel">
+<div class="icc-title">Modelo nulo</div>
+<div class="icc-values"><span><strong>0,150</strong><small>Tierra</small></span><span><strong>0,092</strong><small>Trabajo</small></span></div>
+</div>
+<div class="icc-arrow">→</div>
+<div class="icc-panel accent">
+<div class="icc-title">Modelo completo</div>
+<div class="icc-values"><span><strong>0,118</strong><small>Tierra</small></span><span><strong>0,114</strong><small>Trabajo</small></span></div>
+</div>
+</div>
+
+<div class="key-message">Incluso después de incorporar covariables, permanece <strong>variación entre provincias</strong>.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:05.** Explicar el ICC como proporción de variabilidad asociada al nivel provincial dentro de cada especificación. En trabajo pasa de 0,092 a 0,114: no es una contradicción, porque al incorporar covariables pueden cambiar simultáneamente la varianza entre provincias y la varianza dentro de provincias. Por eso el ICC no tiene que disminuir mecánicamente.
+:::
+
+## La heterogeneidad provincial permanece después de condicionar {.optional-30}
+
+<div class="full-plot-wrap caterpillar-full-wrap">
+<img src="assets/figuras/caterpillar.png" alt="Efectos provinciales condicionados e intervalos de confianza para productividad de tierra y trabajo" class="full-plot-img caterpillar-full">
+</div>
+
+<div class="key-message compact">La localización sigue aportando heterogeneidad que las características observadas de las UPA no absorben completamente.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:05. Versión 30 min: mover al respaldo.** No leer provincia por provincia. El efecto provincial no identifica por sí mismo el mecanismo: puede reflejar mercados, infraestructura, clima, composición productiva, suelo u otras dimensiones no observadas.
+:::
+
+## La asociación con la tenencia es estable frente a dos tratamientos del territorio
+
+<table class="evidence-table numeric compact-table">
+<thead><tr><th></th><th colspan="2">Tierra</th><th colspan="2">Trabajo</th></tr><tr><th>Contraste</th><th>Multinivel</th><th>FE provincia</th><th>Multinivel</th><th>FE provincia</th></tr></thead>
+<tbody>
+<tr><td><strong>Tenencia directa</strong></td><td>−0,254</td><td>−0,254</td><td>−0,238</td><td>−0,238</td></tr>
+<tr><td><strong>Otros regímenes</strong></td><td>−0,391</td><td>−0,389</td><td>−0,341</td><td>−0,339</td></tr>
+</tbody>
+</table>
+
+<div class="key-message">Representar provincia con interceptos aleatorios o con efectos fijos produce una <strong>dirección y magnitud muy próximas</strong> para los contrastes de tenencia.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:00.** Esta es una prueba de robustez territorial particularmente clara. No decir que ambos modelos son equivalentes; decir que el contraste sustantivo de tenencia es poco sensible a estas dos formas de representar provincia.
+:::
+
+## ¿Qué ocurre si dejamos de mirar solo la media?
+
+<div class="sfa-main">
+<div class="sfa-question">
+<h3>Frontera estocástica</h3>
+<p>Cambia la pregunta: de la media condicionada a la <strong>posición relativa frente a una frontera monetaria condicionada</strong>.</p>
+</div>
+
+<div class="sfa-score-grid">
+<div class="sfa-score-card">
+<span class="score-label">Tierra</span>
+<strong>0,404</strong>
+<small>media · mediana 0,409</small>
+</div>
+<div class="sfa-score-card">
+<span class="score-label">Trabajo</span>
+<strong>0,387</strong>
+<small>media · mediana 0,392</small>
+</div>
+</div>
+
+<div class="frontier-scale">
+<span>más lejos de la frontera</span>
+<div class="frontier-bar"></div>
+<span>más cerca de la frontera</span>
+</div>
+
+<div class="reference-band">Muestra: <strong>21.430 UPA</strong> · half-normal principal · truncated-normal como sensibilidad.</div>
+</div>
+
+<div class="warning-box"><strong>No interpretar como “40 % de eficiencia física”.</strong> Son puntuaciones relativas de una frontera de productividad monetaria condicionada, no una función física completa de producción.</div>
+
+::: {.notes}
+**Tiempo objetivo: 1:15.** Usar lenguaje muy cuidadoso. Las puntuaciones describen posición relativa respecto de una frontera de productividad monetaria condicionada. No afirmar que 1−score sea producción recuperable ni que 0,40 signifique “40 % de eficiencia física”. La robustez de la SFA es mayor en orden relativo y dirección que en nivel absoluto.
+:::
+
+## Métodos distintos, una regularidad empírica común
+
+<div class="robustness-grid">
+<div class="robust-row header"><span>Método</span><span>Directa · tierra</span><span>Otros · tierra</span><span>Directa · trabajo</span><span>Otros · trabajo</span></div>
+<div class="robust-row"><span>OLS principal</span><strong>−0,256</strong><strong>−0,446</strong><strong>−0,256</strong><strong>−0,415</strong></div>
+<div class="robust-row"><span>OLS ponderado</span><strong>−0,303</strong><strong>−0,449</strong><strong>−0,267</strong><strong>−0,411</strong></div>
+<div class="robust-row"><span>Multinivel</span><strong>−0,254</strong><strong>−0,391</strong><strong>−0,238</strong><strong>−0,341</strong></div>
+<div class="robust-row"><span>FE provincia</span><strong>−0,254</strong><strong>−0,389</strong><strong>−0,238</strong><strong>−0,339</strong></div>
+</div>
+
+<div class="robustness-footer">
+<span>SFA half-normal / truncated-normal: <strong>correlaciones de puntuaciones &gt; 0,98</strong></span>
+<span>La magnitud cambia; la <strong>dirección sustantiva permanece</strong>.</span>
 </div>
 
 ::: {.notes}
-Estas cifras son muestrales, no estimaciones expandidas. Su función aquí es mostrar la heterogeneidad estructural del sector.
+**Tiempo objetivo: 1:25.** Este es uno de los clímax. Los métodos no estiman exactamente lo mismo, por eso la conclusión se formula sobre estabilidad de dirección y regularidad empírica, no sobre equivalencia de parámetros. En SFA enfatizar la estabilidad del orden relativo.
 :::
 
-## Tres conceptos que no deben confundirse
+## ¿Cómo dialogan estos resultados con la literatura?
 
-<div class="two-cards">
-<div class="method">
-<strong>Propiedad</strong><br>
-Régimen jurídico de dominio.
+<div class="dialogue-grid">
+<div class="dialogue-card">
+<h3>Seguridad formal no es suficiente</h3>
+<p><strong>Abdulai · Simbizi</strong></p>
+<p>Derechos consuetudinarios o percibidos también pueden sostener estabilidad e inversión.</p>
 </div>
-<div class="method">
-<strong>Tenencia</strong><br>
-Condiciones de acceso, uso, control y transferencia de la tierra.
+<div class="dialogue-card">
+<h3>El contexto modifica el resultado</h3>
+<p><strong>Lawry et al. (2017)</strong></p>
+<p>Los efectos promedio conviven con una heterogeneidad regional considerable.</p>
 </div>
+<div class="dialogue-card">
+<h3>Los mercados pueden reasignar tierra</h3>
+<p><strong>Fenske · Otsuka</strong></p>
+<p>El acceso temporal puede ser compatible con reasignación y uso intensivo.</p>
 </div>
-
-<div class="method" style="margin-top:0.8em;">
-<strong>Seguridad de la tenencia</strong><br>
-Estabilidad y protección de los derechos. No equivale automáticamente a disponer de un título formal.
-</div>
-
-<div class="key-message">
-La tesis analiza <strong>régimen predominante de tenencia</strong>; no mide directamente seguridad jurídica ni calidad contractual.
 </div>
 
-## Vacío y contribución doctoral
-
-<div class="two-cards">
-<div class="method">
-<strong>Vacío empírico</strong><br>
-Escasa evidencia reciente a escala nacional que vincule tenencia con resultados productivos de cada UPA.
-</div>
-<div class="method">
-<strong>Vacío metodológico</strong><br>
-Pocas comparaciones conjuntas entre asociaciones promedio, heterogeneidad territorial y fronteras paramétricas.
-</div>
-<div class="method">
-<strong>Vacío conceptual</strong><br>
-Tenencia, propiedad, formalización y seguridad suelen tratarse como equivalentes.
-</div>
-<div class="method">
-<strong>Vacío de identificación</strong><br>
-Tenencia, escala, capacidades y localización pueden seleccionarse conjuntamente.
-</div>
-</div>
+<div class="key-message">Nuestros resultados son <strong>compatibles</strong> con estos mecanismos; el diseño no identifica cuál de ellos opera causalmente.</div>
 
 ::: {.notes}
-La contribución doctoral reside en articular estas dimensiones y en establecer qué resultados son robustos entre distintas estrategias, sin convertir asociaciones en causalidad.
+**Tiempo objetivo: 1:25.** Volver deliberadamente a los autores del inicio. “Compatible con” es el lenguaje correcto. La tesis observa el resultado asociado, no las cláusulas contractuales ni el proceso de selección que llevó a cada UPA a su régimen.
 :::
 
-## Datos y muestras analíticas
+## ¿Dónde están las tensiones? {.optional-30}
 
-<div class="cards">
-<div class="card">
-<div class="big">42.444</div>
-<div class="label">UPA en la base consolidada ESPAC 2022</div>
+<div class="tension-grid">
+<div class="tension-card">
+<span class="study">Koirala et al. (2017)</span>
+<p>En arroz filipino, los arrendatarios presentan menor productividad y mayor ineficiencia que propietarios.</p>
+<strong>Dirección distinta a Ecuador.</strong>
 </div>
-<div class="card">
-<div class="big">22.075</div>
-<div class="label">UPA en la muestra común OLS y multinivel</div>
+<div class="tension-card">
+<span class="study">Place et al. (1993)</span>
+<p>No encuentra una relación general significativa entre derechos, insumos y rendimientos en determinados contextos africanos.</p>
+<strong>La asociación tampoco es universal.</strong>
 </div>
-<div class="card">
-<div class="big">21.430</div>
-<div class="label">UPA con ambas productividades positivas para SFA</div>
-</div>
-</div>
-
-- Unidad de análisis: **UPA del Ecuador continental**
-- Diseño: **cuantitativo, transversal, no experimental**
-- Fuente: **ESPAC 2022**
-
-<div class="source-note">Fuente: elaboración propia a partir de ESPAC 2022.</div>
-
-## Cómo operacionalizo la tenencia
-
-| Régimen analítico | Modalidades principales | Papel en los modelos |
-|---|---|---|
-| **Tenencia directa** | dueño, herencia, usufructo, posesión | comparación |
-| **Arrendamiento y aparcería** | arrendatario, aparcero | **referencia** |
-| **Otros regímenes** | comunero, litigio, invasión, otras formas | comparación |
-
-<div class="key-message">
-La categoría se asigna según el régimen que concentra la <strong>mayor superficie</strong> dentro de cada UPA.
-</div>
-
-## Dos productividades, dos mecanismos
-
-<div class="two-cards">
-<div class="card">
-<div class="big">PT</div>
-<div class="label"><strong>Productividad de la tierra</strong><br>valor bruto estimado / hectárea</div>
-</div>
-<div class="card">
-<div class="big">PL</div>
-<div class="label"><strong>Productividad del trabajo</strong><br>valor bruto estimado / persona ocupada</div>
+<div class="tension-card">
+<span class="study">Feder et al. (1987) · Besley (1995)</span>
+<p>Documentan mecanismos favorables ligados a seguridad e inversión.</p>
+<strong>Eso no implica superioridad automática de toda tenencia directa.</strong>
 </div>
 </div>
 
-<div class="key-message">
-Una UPA puede generar mucho valor por hectárea sin presentar simultáneamente alta productividad por trabajador.
-</div>
-
-## Estrategia empírica: tres preguntas distintas
-
-<div class="cards">
-<div class="method">
-<strong>OLS + HC1</strong><br><br>
-¿Persisten las diferencias promedio condicionadas?
-</div>
-<div class="method">
-<strong>Multinivel</strong><br><br>
-¿Cuánta variación corresponde al nivel provincial?
-</div>
-<div class="method">
-<strong>SFA</strong><br><br>
-¿Dónde se ubican las UPA respecto de una frontera monetaria condicionada?
-</div>
-</div>
-
-<div class="key-message">
-La robustez procede de la <strong>convergencia entre métodos</strong>, no de tratar sus parámetros como equivalentes.
-</div>
-
-## Descripción: las medianas ya muestran diferencias
-
-<div class="cards">
-<div class="card">
-<div class="big">2.486</div>
-<div class="label">USD/ha<br><strong>Arrendamiento y aparcería</strong></div>
-</div>
-<div class="card">
-<div class="big">1.790</div>
-<div class="label">USD/ha<br><strong>Tenencia directa</strong></div>
-</div>
-<div class="card">
-<div class="big">1.503</div>
-<div class="label">USD/ha<br><strong>Otros regímenes</strong></div>
-</div>
-</div>
-
-<div class="cards">
-<div class="card">
-<div class="big">4.075</div>
-<div class="label">USD/persona<br><strong>Arrendamiento y aparcería</strong></div>
-</div>
-<div class="card">
-<div class="big">3.275</div>
-<div class="label">USD/persona<br><strong>Tenencia directa</strong></div>
-</div>
-<div class="card">
-<div class="big">2.140</div>
-<div class="label">USD/persona<br><strong>Otros regímenes</strong></div>
-</div>
-</div>
-
-<div class="source-note">Medianas sobre observaciones con productividad positiva. Fuente: ESPAC 2022.</div>
-
-## Productividad observada según tenencia
-
-::: {.columns}
-::: {.column width="50%"}
-![](assets/figuras/prod_tierra.png)
-:::
-::: {.column width="50%"}
-![](assets/figuras/prod_trabajo.png)
-:::
-:::
-
-<div class="source-note">Figuras originales de la tesis. Lectura descriptiva: no constituyen efectos causales.</div>
-
-## OLS: la brecha persiste al condicionar
-
-<div class="cards">
-<div class="card">
-<div class="big">−0,256</div>
-<div class="label">Tenencia directa<br>Productividad de la tierra</div>
-</div>
-<div class="card">
-<div class="big">−0,446</div>
-<div class="label">Otros regímenes<br>Productividad de la tierra</div>
-</div>
-<div class="card">
-<div class="big">p &lt; 0,001</div>
-<div class="label">ambos contrastes frente a arrendamiento y aparcería</div>
-</div>
-</div>
-
-<div class="cards">
-<div class="card">
-<div class="big">−0,256</div>
-<div class="label">Tenencia directa<br>Productividad del trabajo</div>
-</div>
-<div class="card">
-<div class="big">−0,415</div>
-<div class="label">Otros regímenes<br>Productividad del trabajo</div>
-</div>
-<div class="card">
-<div class="big">N = 22.075</div>
-<div class="label">misma muestra común de estimación</div>
-</div>
-</div>
+<div class="key-message">Las diferencias entre estudios no son ruido: son evidencia de que <strong>el contexto forma parte del fenómeno</strong>.</div>
 
 ::: {.notes}
-Estos son coeficientes sobre la escala transformada del resultado. No deben presentarse como porcentajes exactos sin transformación adicional.
+**Tiempo objetivo: 1:10. Versión 30 min: fusionar con la anterior.** Esta diapositiva demuestra honestidad intelectual. No forzar coincidencias. Las diferencias pueden responder a instituciones, cultivos, contratos, definiciones de productividad y estrategias de identificación distintas.
 :::
 
-## Estabilidad del resultado entre especificaciones {.figure-focus}
+## Qué aporta esta tesis
 
-![](assets/figuras/coef_progresivos.png){.figure-main fig-align="center"}
-
-<div class="key-message compact">
-Los coeficientes cambian de magnitud al incorporar controles, pero <strong>no cambian de signo</strong> ni alteran la ordenación sustantiva entre regímenes.
+<div class="contribution-grid">
+<div class="contribution"><span>Conceptual</span><p>Distingue propiedad, régimen de tenencia y seguridad.</p></div>
+<div class="contribution"><span>Empírica</span><p>Construye evidencia nacional reciente a nivel de UPA.</p></div>
+<div class="contribution highlight"><span>Medición</span><p>Construye y documenta una base de precios 2022 para valorizar producción heterogénea.</p></div>
+<div class="contribution"><span>Metodológica</span><p>Contrasta media condicionada, estructura territorial y frontera estocástica.</p></div>
 </div>
+
+<div class="key-message">La contribución no es un coeficiente aislado: es una <strong>cadena reproducible de medición, contraste e interpretación</strong>.</div>
 
 ::: {.notes}
-Aquí interesa la estabilidad del resultado institucional. M1 a M4 incorporan progresivamente controles. La dirección de las asociaciones se mantiene.
+**Tiempo objetivo: 1:00.** No inflar el aporte. La contribución doctoral está en la articulación de conceptos, medición y estrategias complementarias sobre una fuente nacional reciente.
 :::
 
-## Predicciones ajustadas: la ordenación se conserva {.figure-focus}
+## Hasta dónde llegan nuestras conclusiones
 
-![](assets/figuras/predicciones.png){.figure-main figure-pred fig-align="center"}
-
-<div class="key-message compact">
-Después de condicionar por escala, características sociodemográficas y tecnología, <strong>arrendamiento y aparcería mantienen el mayor nivel ajustado</strong>.
+<div class="limits-grid">
+<div class="limit"><strong>2022</strong><span>corte transversal</span></div>
+<div class="limit"><strong>Asociación</strong><span>no identificación causal</span></div>
+<div class="limit"><strong>Tenencia predominante</strong><span>no calidad contractual completa</span></div>
+<div class="limit"><strong>Valor bruto estimado</strong><span>no beneficio neto</span></div>
+<div class="limit"><strong>SFA condicionada</strong><span>no función física integral de producción</span></div>
+<div class="limit"><strong>Covariables observadas</strong><span>no agotan suelo, clima, mercados ni historia de inversión</span></div>
 </div>
+
+<div class="key-message">Estas restricciones <strong>delimitan la interpretación</strong>; no eliminan la regularidad empírica observada.</div>
 
 ::: {.notes}
-Esta diapositiva traduce los coeficientes a una escala más intuitiva de predicciones ajustadas. Debe leerse como comparación condicionada, no como efecto causal.
+**Tiempo objetivo: 1:05.** Presentar las limitaciones con seguridad, no como disculpa. Son las fronteras epistemológicas del diseño y, al mismo tiempo, definen la agenda de investigación futura.
 :::
-## La escala no significa lo mismo para tierra y trabajo
 
-<div class="two-cards">
-<div class="method">
-<strong>Productividad de la tierra</strong><br><br>
-La superficie mantiene una asociación <strong>negativa</strong>.
-</div>
-<div class="method">
-<strong>Productividad del trabajo</strong><br><br>
-La escala se asocia de forma <strong>positiva pero cóncava</strong>.
-</div>
+## Respuesta final {.closing-slide}
+
+<div class="final-answer">
+<p>En la ESPAC 2022 existe una <strong>asociación sistemática</strong> entre régimen predominante de tenencia y las dos dimensiones de productividad analizadas.</p>
+<p>Frente a arrendamiento y aparcería, la tenencia directa y los otros regímenes presentan <strong>menores niveles condicionados de productividad</strong> en las especificaciones principales, y esa dirección permanece bajo distintas estrategias de estimación.</p>
 </div>
 
-<div class="key-message">
-La aparente contradicción se resuelve al reconocer que tierra y trabajo son <strong>dimensiones distintas del desempeño</strong>.
-</div>
+<div class="final-boundary">La evidencia es <strong>robusta en dirección</strong>, pero <strong>no identifica un efecto causal</strong> del régimen de tenencia.</div>
 
-## El territorio importa
+<div class="final-line">La forma de acceso a la tierra importa, pero su relación con la productividad no puede entenderse separada de la <strong>escala, las capacidades productivas, la tecnología y el territorio</strong>.</div>
 
-<div class="cards">
-<div class="card">
-<div class="big">0,150</div>
-<div class="label">ICC nulo<br>Productividad de la tierra</div>
-</div>
-<div class="card">
-<div class="big">0,092</div>
-<div class="label">ICC nulo<br>Productividad del trabajo</div>
-</div>
-<div class="card">
-<div class="big">22.075</div>
-<div class="label">UPA en los modelos multinivel</div>
-</div>
-</div>
-
-<div class="cards">
-<div class="card">
-<div class="big">0,118</div>
-<div class="label">ICC completo<br>Productividad de la tierra</div>
-</div>
-<div class="card">
-<div class="big">0,114</div>
-<div class="label">ICC completo<br>Productividad del trabajo</div>
-</div>
-<div class="card">
-<div class="big">↓ AIC/BIC</div>
-<div class="label">mejor ajuste relativo que OLS sobre la misma muestra</div>
-</div>
-</div>
-
-## Heterogeneidad provincial condicionada {.figure-focus provincial-focus}
-
-![](assets/figuras/caterpillar.png){.caterpillar-figure fig-align="center"}
-
-<div class="key-message compact">
-Incluso después de controlar covariables, <strong>persisten diferencias provinciales sistemáticas</strong>.
-</div>
+<div class="thanks">Gracias</div>
 
 ::: {.notes}
-El gráfico muestra efectos provinciales condicionados. El objetivo oral no es leer cada provincia, sino evidenciar que la localización sigue aportando heterogeneidad después de controlar las características observadas.
+**Tiempo objetivo: 0:50.** Cerrar con una respuesta exacta a la pregunta. Pausar después de “no identifica un efecto causal”. No introducir resultados nuevos. Esta diapositiva debe quedar visible durante el inicio de preguntas.
 :::
-## El patrón territorial difiere entre indicadores
-
-::: {.columns}
-::: {.column width="50%"}
-![](assets/figuras/mapa_multi_tierra.png)
-:::
-::: {.column width="50%"}
-![](assets/figuras/mapa_multi_trabajo.png)
-:::
-:::
-
-<div class="key-message">
-No existe un único “territorio productivo”: los patrones espaciales cambian según la dimensión del desempeño.
-</div>
-
-## SFA: qué significa aquí “eficiencia”
-
-La especificación separa:
-
-- **ruido simétrico**, y
-- un **componente unilateral** asociado con distancia a la frontera.
-
-<div class="warning-box">
-<strong>Interpretación correcta:</strong> posición relativa respecto de una <strong>frontera de productividad monetaria condicionada</strong>.<br><br>
-No es una función física completa de producción y <strong>1 − eficiencia no equivale automáticamente a producción recuperable</strong>.
-</div>
-
-## SFA: distribución de la posición relativa
-
-<div class="two-cards">
-<div class="card">
-<div class="big">0,404</div>
-<div class="label">media · productividad de la tierra<br>mediana: 0,409</div>
-</div>
-<div class="card">
-<div class="big">0,387</div>
-<div class="label">media · productividad del trabajo<br>mediana: 0,392</div>
-</div>
-</div>
-
-- Muestra: **21.430 UPA**
-- Half-normal como especificación principal
-- Truncated-normal como sensibilidad
-
-<div class="key-message">
-La robustez es mayor para el <strong>orden relativo</strong> y la dirección de las asociaciones que para el nivel absoluto de eficiencia.
-</div>
-
-## La frontera también tiene geografía
-
-::: {.columns}
-::: {.column width="50%"}
-![](assets/figuras/sfa_tierra.png)
-:::
-::: {.column width="50%"}
-![](assets/figuras/sfa_trabajo.png)
-:::
-:::
-
-<div class="source-note">Promedios provinciales de eficiencias individuales; lectura descriptiva complementaria.</div>
-
-## Convergencia entre métodos: el resultado se mantiene {.figure-focus}
-
-![](assets/figuras/coefplot.png){.figure-main figure-coefplot fig-align="center"}
-
-<div class="key-message">
-OLS, multinivel, sensibilidades territoriales y SFA conservan la misma dirección sustantiva: <strong>tenencia directa y otros regímenes se sitúan por debajo de arrendamiento y aparcería en el desempeño condicionado</strong>.
-</div>
-
-## Qué sí permite concluir la tesis
-
-1. El régimen predominante de tenencia **contiene información asociada** con ambas productividades.
-2. La tenencia directa **no presenta una ventaja productiva automática** frente a arrendamiento y aparcería.
-3. La escala opera de forma distinta sobre tierra y trabajo.
-4. La provincia aporta heterogeneidad adicional.
-5. El patrón de tenencia es estable entre especificaciones distintas.
-
-## Qué no permite concluir
-
-<div class="warning-box">
-<strong>No identifica efectos causales.</strong>
-</div>
-
-- No observa qué ocurriría si una misma UPA cambiara de régimen.
-- No mide directamente seguridad jurídica ni calidad contractual.
-- No observa completamente suelo, clima, mecanización, crédito, asistencia técnica, inversión o distancia a mercados.
-- La SFA depende de forma funcional y supuestos distributivos.
-
-<div class="core-result center">
-Asociación condicionada ≠ causalidad
-</div>
-
-## Contribución doctoral
-
-<div class="two-cards">
-<div class="method">
-<strong>Sustantiva</strong><br>
-Distingue tierra y trabajo y evita una jerarquía simple entre regímenes.
-</div>
-<div class="method">
-<strong>Empírica</strong><br>
-Integra microdatos nacionales recientes a escala de UPA.
-</div>
-<div class="method">
-<strong>Metodológica</strong><br>
-Contrasta media condicionada, territorio y frontera paramétrica.
-</div>
-<div class="method">
-<strong>Territorial</strong><br>
-Cuantifica cuánto de la heterogeneidad permanece entre provincias.
-</div>
-</div>
-
-## Implicaciones
-
-- La política de productividad no debería reducirse a **cambiar la modalidad jurídica de tenencia**.
-- La seguridad de los derechos sigue siendo relevante, pero necesita complementos: **infraestructura, mercados, financiamiento, información y tecnología**.
-- Los mercados de arrendamiento pueden cumplir una función de asignación, aunque el mecanismo específico **no está identificado causalmente**.
-- Las intervenciones deben reconocer la **heterogeneidad territorial** y las diferencias entre productividad de la tierra y del trabajo.
-
-## Mensaje final
-
-<div class="key-message" style="font-size:1.22em;">
-La tenencia importa, pero <strong>no de forma aislada</strong>: su asociación con el desempeño agropecuario debe interpretarse junto con la escala, las capacidades observadas, la tecnología, el territorio y los límites de identificación.
-</div>
-
-<br>
-
-<div class="center">
-<strong>Ese es el principal resultado integrador de la tesis.</strong>
-</div>
-
-## Gracias {.section-title}
-
-### Preguntas del tribunal
-
-José Vicente Ordóñez Yaguache  
-Universidade de Santiago de Compostela · 2026
-
----
-
-## Selección de muestra {.apendice}
-
-| Etapa | UPA |
-|---|---:|
-| Base consolidada | 42.444 |
-| Casos completos OLS / multinivel | 22.075 |
-| Ambas productividades > 0 para SFA | 21.430 |
-
-<div class="warning-box small">
-Las muestras analíticas no son estimaciones expandidas del número nacional de UPA.
-</div>
-
-## Variables principales {.apendice}
-
-**Resultados**
-- Productividad monetaria de la tierra
-- Productividad monetaria del trabajo
-
-**Exposición principal**
-- Régimen predominante de tenencia
-
-**Covariables**
-- escala
-- edad
-- educación
-- sexo
-- internet
-- riego
-- fertilizantes
-- plaguicidas
-- provincia
-
-## Robustez OLS {.apendice}
-
-| Resultado | Sensibilidad | Directa | Otros |
-|---|---|---:|---:|
-| Tierra | Principal | −0,256 | −0,446 |
-| Tierra | Ponderado | −0,303 | −0,449 |
-| Trabajo | Principal | −0,256 | −0,415 |
-| Trabajo | Ponderado | −0,267 | −0,411 |
-
-<div class="source-note">Referencia: arrendamiento y aparcería. Todos los contrastes mostrados: p &lt; 0,001.</div>
-
-## Robustez territorial {.apendice}
-
-| Resultado | Régimen | Multinivel | Efectos fijos provinciales |
-|---|---|---:|---:|
-| Tierra | Directa | −0,254 | −0,254 |
-| Tierra | Otros | −0,391 | −0,389 |
-| Trabajo | Directa | −0,238 | −0,238 |
-| Trabajo | Otros | −0,341 | −0,339 |
-
-<div class="key-message">
-La conclusión institucional no depende de representar el territorio con efectos aleatorios o con indicadores provinciales fijos.
-</div>
-
-## Comparación de ajuste {.apendice}
-
-| Modelo | AIC | BIC | Log-verosimilitud |
-|---|---:|---:|---:|
-| OLS tierra | 91.088 | 91.200 | −45.530 |
-| Multinivel tierra | 89.612 | 89.732 | −44.791 |
-| OLS trabajo | 90.827 | 90.947 | −45.399 |
-| Multinivel trabajo | 89.659 | 89.787 | −44.813 |
-
-<div class="source-note">Comparaciones realizadas dentro de la misma variable dependiente y sobre la misma muestra.</div>
-
-## Sensibilidad SFA {.apendice}
-
-- Half-normal: especificación principal.
-- Truncated-normal: sensibilidad distributiva.
-- Los signos y coeficientes de tenencia cambian poco.
-- Las eficiencias individuales presentan **correlaciones > 0,98** entre ambas distribuciones.
-- Las medias y gamma sí cambian de forma apreciable.
-
-<div class="warning-box">
-Por eso la interpretación más defendible se centra en el <strong>orden relativo</strong> y la dirección de las asociaciones, no en un nivel absoluto de “ineficiencia recuperable”.
-</div>
