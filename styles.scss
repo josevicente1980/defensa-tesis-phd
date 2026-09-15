@@ -164,3 +164,136 @@ img {
   color: #9b4a2f;
   font-size: 0.62em;
 }
+
+/* ==========================================================
+   DEFENSA V2 — ajustes visuales y narrativos
+   ========================================================== */
+
+.reveal {
+  --usc-blue: #123f6d;
+  --usc-blue-soft: #eaf0f6;
+  --text-soft: #5f6b77;
+}
+
+/* Portada */
+.reveal .title-slide .quarto-title-block {
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-slide h1,
+.quarto-title-block .title {
+  font-size: 1.48em !important;
+  line-height: 1.08;
+  max-width: 1450px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.title-slide .subtitle,
+.quarto-title-block .subtitle {
+  max-width: 1180px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  font-size: 0.68em !important;
+}
+
+.title-slide .date,
+.quarto-title-block .date {
+  color: var(--usc-blue);
+  font-weight: 650;
+  font-size: 0.76em;
+}
+
+/* Jerarquía general */
+.reveal h2 {
+  font-size: 1.24em;
+  line-height: 1.08;
+  margin-bottom: 0.42em;
+}
+
+.reveal p,
+.reveal li {
+  line-height: 1.28;
+}
+
+.key-message.compact {
+  font-size: 0.86em;
+  line-height: 1.25;
+  padding: 0.55em 0.78em;
+  margin-top: 0.35em;
+}
+
+/* Diapositivas dominadas por figuras */
+.figure-focus h2 {
+  margin-bottom: 0.24em;
+}
+
+.figure-focus img.figure-main {
+  display: block;
+  margin: 0.05em auto 0.1em auto;
+  width: auto;
+  max-width: 96%;
+  max-height: 610px;
+  object-fit: contain;
+}
+
+.figure-focus img.figure-pred {
+  max-height: 600px;
+  max-width: 88%;
+}
+
+.figure-focus img.figure-coefplot {
+  max-height: 590px;
+  max-width: 90%;
+}
+
+/* Caterpillar */
+.provincial-focus img.caterpillar-figure {
+  display: block;
+  width: auto;
+  max-width: 92%;
+  max-height: 650px;
+  margin: -0.05em auto 0 auto;
+  object-fit: contain;
+}
+
+.provincial-focus .key-message {
+  margin-top: 0.05em;
+}
+
+/* Fuente y footer */
+.figure-focus .source-note {
+  margin-top: 0.12em;
+  font-size: 0.40em;
+}
+
+.reveal .footer {
+  font-size: 0.32em;
+  opacity: 0.78;
+}
+
+/* Tarjetas */
+.card {
+  border-top-width: 4px;
+  padding: 0.58em 0.66em;
+}
+
+.card .big {
+  line-height: 1.02;
+}
+
+.method {
+  padding: 0.68em 0.82em;
+}
+
+/* Controles */
+.reveal .controls {
+  opacity: 0.62;
+}
+
+/* Cierre */
+.section-title {
+  padding-top: 0.6em;
+}

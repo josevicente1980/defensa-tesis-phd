@@ -3,7 +3,8 @@ title: "Formas de tenencia de la tierra y productividad agrícola rural en Ecuad
 subtitle: "Una aproximación empírica de la eficiencia técnica mediante modelos de frontera estocástica de producción"
 author: "José Vicente Ordóñez Yaguache"
 institute: "Escuela de Doctorado Internacional · Universidade de Santiago de Compostela"
-date: "2026"
+date: "2026-01-01"
+date-format: "YYYY"
 format:
   revealjs:
     title-slide-attributes:
@@ -227,7 +228,7 @@ La robustez procede de la <strong>convergencia entre métodos</strong>, no de tr
 
 <div class="source-note">Figuras originales de la tesis. Lectura descriptiva: no constituyen efectos causales.</div>
 
-## OLS: el resultado central persiste al condicionar
+## OLS: la brecha persiste al condicionar
 
 <div class="cards">
 <div class="card">
@@ -263,21 +264,29 @@ La robustez procede de la <strong>convergencia entre métodos</strong>, no de tr
 Estos son coeficientes sobre la escala transformada del resultado. No deben presentarse como porcentajes exactos sin transformación adicional.
 :::
 
-## Estabilidad de la tenencia entre especificaciones
+## Estabilidad del resultado entre especificaciones {.figure-focus}
 
-::: {.columns}
-::: {.column width="54%"}
-![](assets/figuras/coef_progresivos.png)
-:::
-::: {.column width="46%"}
-![](assets/figuras/predicciones.png)
-:::
-:::
+![](assets/figuras/coef_progresivos.png){.figure-main fig-align="center"}
 
-<div class="key-message">
-El orden sustantivo no desaparece al incorporar escala, características sociodemográficas y tecnología.
+<div class="key-message compact">
+Los coeficientes cambian de magnitud al incorporar controles, pero <strong>no cambian de signo</strong> ni alteran la ordenación sustantiva entre regímenes.
 </div>
 
+::: {.notes}
+Aquí interesa la estabilidad del resultado institucional. M1 a M4 incorporan progresivamente controles. La dirección de las asociaciones se mantiene.
+:::
+
+## Predicciones ajustadas: la ordenación se conserva {.figure-focus}
+
+![](assets/figuras/predicciones.png){.figure-main figure-pred fig-align="center"}
+
+<div class="key-message compact">
+Después de condicionar por escala, características sociodemográficas y tecnología, <strong>arrendamiento y aparcería mantienen el mayor nivel ajustado</strong>.
+</div>
+
+::: {.notes}
+Esta diapositiva traduce los coeficientes a una escala más intuitiva de predicciones ajustadas. Debe leerse como comparación condicionada, no como efecto causal.
+:::
 ## La escala no significa lo mismo para tierra y trabajo
 
 <div class="two-cards">
@@ -327,12 +336,17 @@ La aparente contradicción se resuelve al reconocer que tierra y trabajo son <st
 </div>
 </div>
 
-## Heterogeneidad provincial después de controlar covariables
+## Heterogeneidad provincial condicionada {.figure-focus provincial-focus}
 
-![](assets/figuras/caterpillar.png){fig-align="center"}
+![](assets/figuras/caterpillar.png){.caterpillar-figure fig-align="center"}
 
-<div class="source-note">Cada punto representa la desviación provincial estimada respecto del promedio general, con intervalos condicionales.</div>
+<div class="key-message compact">
+Incluso después de controlar covariables, <strong>persisten diferencias provinciales sistemáticas</strong>.
+</div>
 
+::: {.notes}
+El gráfico muestra efectos provinciales condicionados. El objetivo oral no es leer cada provincia, sino evidenciar que la localización sigue aportando heterogeneidad después de controlar las características observadas.
+:::
 ## El patrón territorial difiere entre indicadores
 
 ::: {.columns}
@@ -394,9 +408,9 @@ La robustez es mayor para el <strong>orden relativo</strong> y la dirección de 
 
 <div class="source-note">Promedios provinciales de eficiencias individuales; lectura descriptiva complementaria.</div>
 
-## Resultado decisivo: convergencia entre métodos
+## Convergencia entre métodos: el resultado se mantiene {.figure-focus}
 
-![](assets/figuras/coefplot.png){fig-align="center"}
+![](assets/figuras/coefplot.png){.figure-main figure-coefplot fig-align="center"}
 
 <div class="key-message">
 OLS, multinivel, sensibilidades territoriales y SFA conservan la misma dirección sustantiva: <strong>tenencia directa y otros regímenes se sitúan por debajo de arrendamiento y aparcería en el desempeño condicionado</strong>.
