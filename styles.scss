@@ -1,0 +1,166 @@
+/*-- scss:defaults --*/
+$presentation-heading-color: #123f6d;
+$presentation-font-size-root: 34px;
+$body-color: #1f2933;
+$link-color: #123f6d;
+
+/*-- scss:rules --*/
+
+.reveal {
+  font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.reveal h2 {
+  border-bottom: 3px solid #123f6d;
+  padding-bottom: 0.18em;
+  margin-bottom: 0.55em;
+}
+
+.reveal .slide-number {
+  font-size: 0.48em;
+}
+
+.reveal .footer {
+  font-size: 0.36em;
+  color: #66717d;
+}
+
+.title-slide h1,
+.quarto-title-block .title {
+  font-size: 1.55em !important;
+  line-height: 1.12;
+  color: #123f6d;
+}
+
+.title-slide .subtitle,
+.quarto-title-block .subtitle {
+  font-size: 0.72em !important;
+  line-height: 1.25;
+  color: #374151;
+}
+
+.small {
+  font-size: 0.72em;
+}
+
+.tiny {
+  font-size: 0.56em;
+}
+
+.center {
+  text-align: center;
+}
+
+.key-message {
+  border-left: 8px solid #123f6d;
+  background: #f3f6f9;
+  padding: 0.8em 1.0em;
+  margin-top: 0.7em;
+  font-size: 1.05em;
+  font-weight: 600;
+}
+
+.warning-box {
+  border-left: 8px solid #9b4a2f;
+  background: #fbf6f3;
+  padding: 0.72em 0.95em;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65em;
+  margin-top: 0.8em;
+}
+
+.card {
+  border: 1px solid #d8dee6;
+  border-top: 5px solid #123f6d;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 0.65em 0.7em;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+}
+
+.card .big {
+  font-size: 1.55em;
+  color: #123f6d;
+  font-weight: 700;
+  margin-bottom: 0.08em;
+}
+
+.card .label {
+  font-size: 0.66em;
+  color: #4b5563;
+  line-height: 1.2;
+}
+
+.two-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9em;
+  margin-top: 0.7em;
+}
+
+.method {
+  border-radius: 10px;
+  padding: 0.75em 0.9em;
+  background: #f6f8fa;
+  border: 1px solid #d9e0e7;
+}
+
+.method strong {
+  color: #123f6d;
+}
+
+img {
+  max-height: 610px;
+}
+
+.reveal table {
+  font-size: 0.68em;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.section-title h2 {
+  border: none;
+  font-size: 1.45em;
+  margin-top: 1.3em;
+}
+
+.section-title p {
+  font-size: 0.82em;
+  color: #5b6570;
+}
+
+.source-note {
+  font-size: 0.48em;
+  color: #6b7280;
+  margin-top: 0.4em;
+}
+
+.core-result {
+  font-size: 1.22em;
+  color: #123f6d;
+  font-weight: 700;
+}
+
+.reveal .columns {
+  align-items: center;
+}
+
+.apendice h2::before {
+  content: "APÉNDICE · ";
+  color: #9b4a2f;
+  font-size: 0.62em;
+}
